@@ -39,7 +39,6 @@ const nick : Player = {
   age : 10,
 };
 
-
 // 함수에서 사용
 // function 함수 (인자:타입) : 리턴타입 {}
 function play1 (name : string) : Player {

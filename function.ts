@@ -79,13 +79,11 @@ else console.log(config.path);
 type SuperPrint = {
   <T>(arr: T[]): void // <T> generic
 }
-type SuperReturn = {
-  <T>(arr: T[]): T
+const superPrint: SuperPrint = (arr) => {
+  arr.forEach(i => console.log(i))
 }
 
-const superPrint: SuperPrint = (arr) => {
-    arr.forEach(i => console.log(i))
-}
+type SuperReturn = <T>(arr: T[]) => T
 const superReturn: SuperReturn = (arr) => arr[0]
 
 superPrint([1, 2, 3, 4])
