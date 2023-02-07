@@ -73,8 +73,8 @@ else console.log(config.path);
 
 // generic type
 // 타입의 placeholder 같은 의미
-// 제네릭은 선언 시점이 아니라 생성 시점에 타입을 명시하여 하나의 타입만이 아닌 다양한 타입을 사용할 수 있도록 하는 기법이다.
-// 한번의 선언으로 다양한 타입에 재사용이 가능하다는 장점이 있다.
+// 제네릭은 선언 시점이 아니라 생성 시점에 타입을 명시하여 단일 타입만이 아닌 다양한 타입을 사용할 수 있도록 하는 기법이다.
+// 제네릭을 통해 인터페이스, 함수 등의 재사용성을 높일 수 있다는 장점이 있다.
 // T는 제네릭을 선언할 때 관용적으로 사용되는 식별자로 타입 파라미터(Type parameter)라 한다. 반드시 T로 적어야 하는거는 아님
 type SuperPrint = {
   <T>(arr: T[]): void // <T> generic
@@ -93,7 +93,28 @@ console.log(superReturn([1, 2, 3, 4]))
 console.log(superReturn([1, 2, false, true]))
 
 // 일반 함수에서 사용
-function number<T>(a : T[]): T {
+function number<T>(a : T[]) {
   return a[0]
 }
 console.log(number(['1a', '2a', 3, 4]))
+
+// 화살표함수
+const num = <T>(a: T[]) => a[0]
+
+// 다양한 예시
+// 원하는대로 코드 확장 및, 타입 생성 및 다른 타입 속으로 넣어서 사용가능
+type PlayName<E> = {
+  name: string,
+  extraInfo: E, // 제네릭
+};
+
+type ExtraInfo = {age: number}
+
+type MeInfo = PlayName<ExtraInfo> 
+
+const johan : MeInfo  = {
+  name: "johan",
+  extraInfo: {
+    age: 23
+  }
+};
