@@ -68,3 +68,36 @@ const dier = {
     age: 20,
     hobby: 'soccer'
 };
+class character {
+    constructor(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+    sayHi(name) {
+        return 'hello';
+    }
+    fullName() {
+        return this.firstName + this.lastName;
+    }
+}
+class LocalStorage {
+    constructor() {
+        this.storage = {};
+    }
+    set(key, value) {
+        this.storage[key] = value;
+    }
+    remove(key) {
+        delete this.storage[key];
+    }
+    get(key) {
+        return this.storage[key];
+    }
+    clear() {
+        this.storage = {};
+    }
+}
+const strStorage = new LocalStorage();
+strStorage.get('hey');
+strStorage.set('hey', 'hello');
