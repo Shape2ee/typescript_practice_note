@@ -43,25 +43,25 @@ const sum : Sum = (a, b, c?:number) => {
 router.push("/home");
 
 router.push({
-path: "/home",
-state: 1
+  path: "/home",
+  state: 1
 });
 
 예를 들어, Next.js의 라우터 push가 대충 두 가지 방법으로 페이지를 이동한다고 할 때,
 
 type Config = {
-path: string,
-state: number
+  path: string,
+  state: number
 }
 
 type Push = {
-(config: Config): void,
-(config: string): void
+  (config: Config): void,
+  (config: string): void
 }
 
 const push: Push = (config) => {
-if (typeof config === "string") console.log(config);
-else console.log(config.path);
+  if (typeof config === "string") console.log(config);
+  else console.log(config.path);
 }
 */
 

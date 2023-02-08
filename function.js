@@ -27,3 +27,11 @@ function number(a) {
     return a[0];
 }
 console.log(number(['1a', '2a', 3, 4]));
+// 화살표함수
+const num = (a) => a[0];
+const johan = {
+    name: "johan",
+    extraInfo: {
+        age: 23
+    }
+};
