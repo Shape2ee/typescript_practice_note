@@ -28,6 +28,14 @@ class Dict {
             delete this.words[term];
         }
     }
+    showAll() {
+        Object.keys(this.words).forEach((key) => {
+            console.log(`${key} : ${this.words[key]}`);
+        });
+    }
+    count() {
+        console.log(Object.keys(this.words).length);
+    }
 }
 class Word {
     constructor(
@@ -46,5 +54,7 @@ dict.add(banana);
 dict.add(apple);
 dict.find('kimchi');
 dict.update('kimchi', '한국의음식');
-dict.del('kimchi');
-console.log(dict);
+dict.del('banana');
+dict.showAll();
+dict.count();
+// console.log(dict)
