@@ -1,3 +1,7 @@
-const hello = () => {
-  return 'hello'
-}
+import { init, exit } from 'myPackage'
+
+init({
+  url: "true"
+})
+
+exit(1)

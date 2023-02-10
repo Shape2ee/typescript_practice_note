@@ -68,7 +68,7 @@ class ReadWord {
 // interface
 // type과 비슷하기도 하지만 다른점을 가지고 있다.
 // 오로지 객체의 형태를 타입스크립트로 설명해주기 위한 용도로 사용, 타입은 좀 더 유연함
-type UserName = string; //Type alias(타입에 대한 별명)를 만들어줄 수 있고
+type UserName = string; // Type alias(타입에 대한 별명)를 만들어줄 수 있고
 type UserColor = 'red' | 'blue' | 'yellow'; // 특정한 값을 가지도록 할 수 있음
 
 interface InterfaceUser {
@@ -154,13 +154,14 @@ class character implements Human, Age {
   }
 }
 
-// 타입과 인터페이스 결로
+// 타입과 인터페이스 결론
 // 클래스나 객체의 모양을 정의하고 싶으면 인터페이스
 // 그 외의 나머지는 타입으로 정의
 
 interface SStorage<T> {
   [key: string]: T
 }
+
 class LocalStorage<T> {
   private storage: SStorage<T> = {}
   set(key: string, value: T) {
