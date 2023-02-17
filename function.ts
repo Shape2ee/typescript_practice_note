@@ -9,8 +9,8 @@ function add (a:number, b:number) {
 const add = (a:number, b:number) => a + b
 */
 
-type Add = (a:number, b:number) => number
-const add : Add = (a, b) => a + b
+type Add = (a: number, b: number) => number
+const add: Add = (a, b) => a + b
 
 // 오버로딩 (overloading)
 // function overloading, method overloading
@@ -19,21 +19,21 @@ const add : Add = (a, b) => a + b
 
 // 매개 변수의 타입이 다른 경우
 type Plus = {
-  (a:number, b:number) : number
-  (a:number, b:string) : number
+  (a: number, b: number): number
+  (a: number, b: string): number
 }
-const plus : Plus = (a, b) => {
+const plus: Plus = (a, b) => {
   if (typeof b === 'string') return a
-  return a+b
+  return a + b
 }
 
 // 매개 변수의 수가 다른 경우
 type Sum = {
-  (a:number, b:number) : number
-  (a:number, b:number, c:number) : number
+  (a: number, b: number): number
+  (a: number, b: number, c: number): number
 }
-const sum : Sum = (a, b, c?:number) => {
-  if(c) return a + b + c
+const sum: Sum = (a, b, c?: number) => {
+  if (c) return a + b + c
   return a + b
 }
 
@@ -93,7 +93,7 @@ console.log(superReturn([1, 2, 3, 4]))
 console.log(superReturn([1, 2, false, true]))
 
 // 일반 함수에서 사용
-function number<T>(a : T[]) {
+function number<T>(a: T[]) {
   return a[0]
 }
 console.log(number(['1a', '2a', 3, 4]))
@@ -108,11 +108,11 @@ type PlayName<E> = {
   extraInfo: E, // 제네릭
 };
 
-type ExtraInfo = {age: number}
+type ExtraInfo = { age: number }
 
-type MeInfo = PlayName<ExtraInfo> 
+type MeInfo = PlayName<ExtraInfo>
 
-const johan : MeInfo  = {
+const johan: MeInfo = {
   name: "johan",
   extraInfo: {
     age: 23
